@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1</title>
+</head>
+
+<body>
+    <h1>Masukkan kata:</h1>
+    <input type="text" id="kata" placeholder="masukkan sebuah kata">
+    <br>
+    <button onclick="hitungVokal()">Hitung Vokal</button>
+    <button onclick="hurufVokal()">Huruf Vokal</button>
+    <button onclick="tanpaVokal()">Tanpa Vokal</button>
+
+    <h1>Hasil :</h1>
+    <h1 id="output"></h1>
+</body>
+<script>
+    function isVowel(c) {
+        return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1
+    }
+    function hitungVokal() {
+        let teks = document.getElementById('kata').value
+        let teksArray = teks.split("")
+        let jumlahVokal = 0
+        for (let n = 0; n < teksArray.length; n++) {
+            if (isVowel(teksArray[n]) === true) 
+            jumlahVokal++
+        }
+        document.getElementById('output').innerHTML = `ada ${jumlahVokal} huruf vokal`
+    }
+    function hurufVokal() {
+        let teks = document.getElementById('kata').value
+        let teksArray = teks.split("")
+        let teksbaru = teksArray.filter(huruf => 'aeiou'.includes(huruf))
+        let newteks = teksbaru.join('')
+        document.getElementById('output').innerHTML = `huruf vokal : ${newteks}`
+    }
+    function tanpaVokal() {
+        let teks = document.getElementById('kata').value
+        let teksArray = teks.split("")
+        let teksbaru = teksArray.filter(huruf => 'qwrtypsdfghjklzxcvbnm'.includes(huruf))
+        let newteks = teksbaru.join('')
+        document.getElementById('output').innerHTML = `tanpa vokal : ${newteks}`
+    }
+    
+</script>
+
+</html>

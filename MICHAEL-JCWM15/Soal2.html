@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 2</title>
+    <style>
+        table, tr, td, th {
+            border : 1px solid black ;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Product</h1>
+    <form id="addproduk">
+        <input type="text" id="name" placeholder="product name">
+        <input type="number" id="price" placeholder="product price">
+        <br>
+        Category:
+        <form id="category">
+            <input id="food" type="radio" name="category" value="food">food
+            <input id="drink" type="radio" name="category" value="drink">drink
+            <input id="others" type="radio" name="category" value="others">others
+        </form>
+    </form>
+    <br>
+    <button onclick="buttonadd()">Add</button>
+    
+    <table id="formproduk">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyproduk"></tbody>
+    </table>
+
+</body>
+<script src="/MICHAEL-JCWM15/Soal2.js"></script>
+</html>
